@@ -1,0 +1,368 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0%;
+    
+}
+/* Général */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #003049;
+    height: 80px;
+    color: white;
+}
+
+.logo img {
+    height: 50px;
+}
+
+/* Barre de navigation */
+.nav-bar ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-bar ul li a:hover {
+    background-color: #054e7ed9;
+    color: white;
+}
+
+/* Auth et langue */
+.auth-language {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-info a{
+    color:wheat;
+
+}
+.user-info span{
+    font-size: 3ex;
+    color: #13d2ef;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.auth-language select {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color: #003049;
+}
+
+.auth-language a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.auth-language a:hover {
+    background-color: rgba(255, 255, 255, 0.289);
+}
+   
+
+.welcome-text {
+    padding: 4ex;
+    width: 100%;
+    color: #73accf;
+}
+
+.moving-text {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 24px;
+    font-weight: bold;
+    color: #003049;
+    animation: moveText 10s linear infinite;
+}
+
+
+@keyframes moveText {
+    from {
+        transform: translateX(50%);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.aide a {
+    border: 1px solid black;
+}
+
+.welcome-text {
+    padding: 0 4ex;
+    background-color: #f5eaea;
+}
+
+.welcome-text h1 {
+    font-size: 36px;
+}
+
+.welcome-text p {
+    font-size: 18px;
+    margin-top: 2ex;
+}
+
+main {
+    background-image: url("rendez-vous-medicaux-en-ligne-mdecins.jpg");
+    background-size: cover;
+
+}
+.content-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    padding: 8%;
+    column-gap: 10%;
+    align-items: center;
+}
+
+.content-container button a{
+    text-decoration: none;
+    color: #fff;
+}
+.content-container button a:active{
+    color: #0a3c8e;
+}
+.content-item {
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    padding: 5ex;
+    background-color: #f5eaea;
+    border-radius: 6px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.content-item img{
+    margin-top: 5%;
+    height: 60%;
+    width: 100%;
+    border-radius: 6px;
+}
+.content-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+.content-item h1 {
+    color: #73accf;
+    margin-bottom: 15px;
+}
+.content-item button {
+    margin-top: 4%;
+    padding: 2ex;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #05ccc6;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    .logo img{
+        position: absolute;
+    }
+    .auth-links{
+        padding-left: 20ex;
+    }
+    .header-container{
+        flex-direction: column;
+        height: 20%;
+    }
+    .content-container{
+        flex-direction: column;
+        row-gap: 5ex;
+    }
+    .language-help {
+        margin-left: 35%;
+    }
+}
+/* Section des actualités */
+.actualites-section {
+    background-color: #f1f1f1;
+    padding: 50px 20px;
+    margin-top: 50px; /* Un peu d'espace au-dessus */
+    border-bottom: 2px solid #003049;
+}
+
+.actualites-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.actualites-header h2 {
+    font-size: 36px;
+    color: #003049;
+}
+
+.actualites-header p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Carrousel des actualités */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Masque les images qui dépassent */
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease; /* Pour les transitions de basculement */
+}
+
+.carousel-slide {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.carousel-image {
+    width: 80%;
+    height: 90%;
+}
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.prev-btn, .next-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Footer */
+footer {
+    background-color: #003049;
+    color: #fff;
+    padding: 40px 20px;
+    font-size: 14px;
+}
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+.footer-section {
+    flex: 1 1 calc(25% - 20px);
+    min-width: 200px;
+}
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #73accf;
+}
+.footer-section p,
+.footer-section ul li {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-section ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+.footer-section ul li a:hover {
+    color: #73accf;
+}
+.footer-section .social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+.footer-section .social-links a {
+    color: #fff;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+.footer-section .social-links a:hover {
+    color: #73accf;
+}
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #fff;
+}
+.footer-bottom a {
+    color: #73accf;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer-bottom a:hover {
+    color: #fff;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-section {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+}
+.footer-section.social {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre les éléments horizontalement */
+    text-align: center;
+}
+
+.footer-section .social-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center; /* Aligne les icônes horizontalement */
+    margin-top: 10px;
+}

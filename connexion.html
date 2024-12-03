@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="connexion.css">
+    <title>Page de Connexion | CMS</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container sign-in">
+            <form id="loginForm">
+                <h1>Connexion</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>Vous pouvez utiliser votre email pour vous connecter</span>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Mot de passe" required>
+                <a href="forget.html">Mot de passe oublié ?</a>
+                <button type="submit">Se connecter</button>
+                <a href="index.html"><p>Retour</p></a>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-right">
+                    <h1>Bonjour!</h1>
+                    <p>Entrez vos informations personnelles pour utiliser toutes les fonctionnalités du site</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+          
+            const utilisateurEnregistre = JSON.parse(localStorage.getItem("utilisateur"));
+        if (email === utilisateurEnregistre.email && password === utilisateurEnregistre.password) {
+    alert("Connexion réussie ! Bienvenue " + utilisateurEnregistre.nom);
+    
+    localStorage.setItem("nomUtilisateur", utilisateurEnregistre.nom);
+    window.location.href = "index.html";
+} else {
+    alert("Email ou mot de passe incorrect.");
+}
+        })
+        function connecterUtilisateur() {
+            const email = document.querySelector("input[type='email']").value;
+            const password = document.querySelector("input[type='password']").value;
+    
+            const utilisateur = JSON.parse(localStorage.getItem("utilisateur"));
+    
+            if (utilisateur && utilisateur.email === email && utilisateur.password === password) {
+                localStorage.setItem("nomUtilisateur", utilisateur.nom); // Enregistrer le nom de l'utilisateur pour l'afficher
+                window.location.href = "index.html"; // Rediriger vers la page d'accueil
+            } else {
+                alert("Email ou mot de passe incorrect");
+            }
+        }
+
+    </script>
+</body>
+</html>

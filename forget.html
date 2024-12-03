@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Récupération de mot de passe</title>
+    <link rel="stylesheet" href="forget.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Récupération de mot de passe</h1>
+        <p>Entrez les informations suivantes pour récupérer votre mot de passe :</p>
+        
+        <form id="recoveryForm">
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required>
+
+            <label for="prenom">Prénom :</label>
+            <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom" required>
+
+            <label for="telephone">Numéro de téléphone :</label>
+            <input type="tel" id="telephone" name="telephone" placeholder="Entrez votre numéro" required>
+
+            <button type="submit">Envoyer le mot de passe</button>
+        </form>
+
+        <p><a href="connexion.html" class="back-link">Retour à la page de connexion</a></p>
+    </div>
+
+    <script>
+        
+        const form = document.getElementById('recoveryForm');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); 
+
+            const nom = document.getElementById('nom').value;
+            const prenom = document.getElementById('prenom').value;
+            const telephone = document.getElementById('telephone').value;
+
+            if (nom && prenom && telephone) {
+                
+                alert(`Le mot de passe a été envoyé à l'adresse e-mail associée au numéro ${telephone}.`);
+            }
+        });
+    </script>
+</body>
+</html>

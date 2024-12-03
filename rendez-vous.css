@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("background rendez-vous.jpg"); 
+
+    background-position: center; 
+    background-attachment: fixed; 
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+form {
+    background-color: #078482;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 550px;
+}
+
+.Retour {
+    justify-content: center;
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: #bfb7ab;
+}
+
+a {
+    color: #05ccc6;
+    text-decoration: none;
+}
+
+.h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    padding: 5px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 15px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 2px solid #d1d1d1;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus {
+    border-color: #bfbebd; 
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    background-color: #05ccc6;
+    color: #fff;
+    border: none;
+    border-radius: 8px; 
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #048a84;
+}
+
+@media (max-width: 600px) {
+    form {
+        padding: 20px;
+    }
+
+    .h3 {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}

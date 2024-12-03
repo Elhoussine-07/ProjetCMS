@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>CMS Site</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="cms logo.png" alt="CMS Logo">
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="aide.html">Aide</a></li>
+                </ul>
+            </nav>
+
+            <!-- Langue et Auth -->
+            <div class="auth-language" id="authLinks">
+                <a href="connexion.html"><i class="fas fa-sign-in-alt"></i> Connexion</a>
+                <a href="S'inscrire.html"><i class="fas fa-user-plus"></i> S'inscrire</a>
+            </div>
+
+            <!-- Informations de l'utilisateur (si connecté) -->
+            <div class="user-info" id="userInfo" style="display: none;">
+                <span id="usernameDisplay"></span>
+                <a href="deconnexion.html">Se déconnecter</a>
+            </div>
+
+            <!-- Hamburger Menu for Mobile -->
+            <div class="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-container">
+            <div class="content-item lang fr">
+                <h1>Rendez-vous</h1>
+                <button><a href="rendez-vous.html">Cliquer ici</a></button>
+                <img src="imggg1.png" alt="Rendez-vous">
+            </div>
+            <div class="content-item lang en" style="display: none;">
+                <h1>Appointments</h1>
+                <button><a href="rendez-vous.html">Click me</a></button>
+                <img src="imggg1.png" alt="Appointments">
+            </div>
+
+            <div class="content-item lang fr">
+                <h1>Médicaments</h1>
+                <button><a href="medicament.html">Cliquer ici</a></button>
+                <img src="imggg2.png" alt="Médicaments">
+            </div>
+            <div class="content-item lang en" style="display: none;">
+                <h1>Medications</h1>
+                <button><a href="medicament.html">Click here</a></button>
+                <img src="imggg2.png" alt="Medications">
+            </div>
+        </div>
+    </main>
+
+    <section class="actualites-section">
+        <div class="actualites-header">
+            <h2>Actualités Récentes</h2>
+            <p>Restez informé des dernières nouveautés et mises à jour sur notre plateforme.</p>
+        </div>
+
+        <!-- Carrousel des actualités -->
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-slide">
+                    <img src="AMM-site.png" alt="Actualité 1" class="carousel-image">
+                </div>
+                <div class="carousel-slide">
+                    <img src="news2.jpg" alt="Actualité 2" class="carousel-image">
+                </div>
+                <div class="carousel-slide">
+                    <img src="news3.jpg" alt="Actualité 3" class="carousel-image">
+                </div>
+                <div class="carousel-slide">
+                    <img src="news4.jpg" alt="Actualité 3" class="carousel-image">
+                </div>
+                <div class="carousel-slide">
+                    <img src="news5.jpg" alt="Actualité 3" class="carousel-image">
+                </div>
+            </div>
+    
+            <!-- Flèches de navigation -->
+            <div class="carousel-nav">
+                <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <!-- Informations sur le site -->
+            <div class="footer-section about">
+                <h3>À propos de CMS</h3>
+                <p>CMS est votre plateforme de gestion simplifiée pour les rendez-vous et informations médicales. Nous visons à rendre la gestion de la santé plus accessible.</p>
+            </div>
+
+            <!-- Zone de contact -->
+            <div class="footer-section contact">
+                <h3>Contactez-nous</h3>
+                <p><i class="fas fa-envelope"></i> Email : contact@cms.com</p>
+                <p><i class="fas fa-phone"></i> Téléphone : +212 6 00 00 00 00</p>
+                <p><i class="fas fa-map-marker-alt"></i> Adresse : Rue des Hôpitaux, Casablanca, Maroc</p>
+            </div>
+
+            <!-- Liens rapides -->
+            <div class="footer-section links">
+                <h3>Liens utiles</h3>
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="rendez-vous.html">Rendez-vous</a></li>
+                    <li><a href="medicament.html">Médicaments</a></li>
+                    <li><a href="aide.html">Aide</a></li>
+                </ul>
+            </div>
+
+            <!-- Liens sociaux -->
+            <div class="footer-section social">
+                <h3>Suivez-nous</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 CMS. Tous droits réservés. | <a href="privacy.html">Politique de confidentialité</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Vérifie si un utilisateur est connecté et affiche son nom
+        const utilisateur = JSON.parse(localStorage.getItem("utilisateur"));
+        const authLinks = document.getElementById("authLinks");
+        const userInfo = document.getElementById("userInfo");
+        const usernameDisplay = document.getElementById("usernameDisplay");
+
+        if (utilisateur) {
+            authLinks.style.display = 'none'; // Masquer les liens de connexion et d'inscription
+            userInfo.style.display = 'block'; // Afficher les informations de l'utilisateur
+            usernameDisplay.textContent = `Bienvenue ${utilisateur.nom}`; // Afficher le nom d'utilisateur
+        } else {
+            authLinks.style.display = 'block'; // Afficher les liens de connexion et d'inscription
+            userInfo.style.display = 'none'; // Masquer les informations de l'utilisateur
+        }
+
+        // Fonction pour changer la langue (déjà incluse)
+        function changeLanguage(lang) {
+            document.querySelectorAll('.lang').forEach(element => {
+                element.style.display = 'none';
+            });
+
+            document.querySelectorAll('.' + lang).forEach(element => {
+                element.style.display = 'block';
+            });
+        }
+
+        // Sélectionner les éléments du carrousel
+const slides = document.querySelectorAll('.carousel-slide');
+const prevButton = document.querySelector('.prev-btn');
+const nextButton = document.querySelector('.next-btn');
+
+let currentIndex = 0; // Index de l'élément actuel
+
+// Fonction pour afficher le carrousel en fonction de l'index
+function updateCarousel() {
+    // Ajuster la position de la galerie pour afficher l'image correspondante à currentIndex
+    const carousel = document.querySelector('.carousel');
+    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+// Fonction pour passer à l'image suivante
+function nextSlide() {
+    // Si on est à la dernière image, revenir à la première
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateCarousel();
+}
+
+// Fonction pour revenir à l'image précédente
+function prevSlide() {
+    // Si on est à la première image, aller à la dernière
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateCarousel();
+}
+
+// Ajouter des écouteurs d'événements pour les boutons
+nextButton.addEventListener('click', nextSlide);
+prevButton.addEventListener('click', prevSlide);
+
+// Initialiser le carrousel en affichant la première image
+updateCarousel();
+
+    </script>
+</body>
+
+</html>

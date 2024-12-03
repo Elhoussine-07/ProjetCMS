@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche de Médicament</title>
+    <link rel="stylesheet" href="medicament.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Recherche de Médicament</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <h1>Recherchez un médicament</h1>
+            <p>Choisissez l'option qui vous convient pour commencer la recherche :</p>
+            <div class="search-options">
+                <div class="option">
+                    <input type="radio" id="searchByName" name="searchOption" value="name" checked>
+                    <label for="searchByName">Rechercher par nom</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="searchByDescription" name="searchOption" value="description">
+                    <label for="searchByDescription">Rechercher par description de symptômes</label>
+                </div>
+            </div>
+
+            <form id="searchForm">
+                <div class="search-method" id="nameSearch">
+                    <label for="searchName">Nom du médicament :</label>
+                    <input type="text" id="searchName" placeholder="Entrez le nom du médicament">
+                </div>
+
+                <div class="search-method" id="descriptionSearch" style="display: none;">
+                    <label for="searchDescription">Décrivez vos symptômes :</label>
+                    <textarea id="searchDescription" placeholder="Décrivez vos symptômes ici..."></textarea>
+                </div>
+
+                <button type="submit">Rechercher</button>
+            </form>
+        </div>
+
+        <div id="searchResults" class="results-container">
+            
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CMS. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        
+        const searchForm = document.getElementById("searchForm");
+        const searchResults = document.getElementById("searchResults");
+        const searchByName = document.getElementById("searchByName");
+        const searchByDescription = document.getElementById("searchByDescription");
+        const nameSearch = document.getElementById("nameSearch");
+        const descriptionSearch = document.getElementById("descriptionSearch");
+
+       
+        searchByName.addEventListener("change", toggleSearchMethod);
+        searchByDescription.addEventListener("change", toggleSearchMethod);
+
+        function toggleSearchMethod() {
+            if (searchByName.checked) {
+                nameSearch.style.display = "block";
+                descriptionSearch.style.display = "none";
+            } else if (searchByDescription.checked) {
+                nameSearch.style.display = "none";
+                descriptionSearch.style.display = "block";
+            }
+        }
+
+        
+        searchForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            
+            const searchNameValue = document.getElementById("searchName").value.trim();
+            const searchDescriptionValue = document.getElementById("searchDescription").value.trim();
+
+           
+            let results = "";
+            if (searchNameValue) {
+                results = `<h3>Résultats pour "${searchNameValue}" :</h3>
+                    <p>Médicament trouvé : Paracétamol 500mg</p>
+                    <p>Utilisation : Soulagement de la douleur légère à modérée.</p>`;
+            } else if (searchDescriptionValue) {
+                results = `<h3>Résultats pour les symptômes : "${searchDescriptionValue}"</h3>
+                    <p>Médicament suggéré : Ibuprofène</p>
+                    <p>Utilisation : Réduction de la douleur et de l'inflammation.</p>`;
+            } else {
+                results = `<p>Veuillez entrer un nom ou une description pour effectuer une recherche.</p>`;
+            }
+
+            
+            searchResults.innerHTML = results;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Déconnexion | CMS</title>
+</head>
+
+<body>
+    <script>
+     
+            // Supprimer les données d'utilisateur du localStorage
+            localStorage.removeItem("utilisateur");
+            localStorage.removeItem("nomUtilisateur");
+        
+            alert("Vous avez été déconnecté.");
+            window.location.href = "index.html"; // Rediriger vers la page d'accueil
+    
+        
+    </script>
+</body>
+
+</html>

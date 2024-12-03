@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="monCompte.css">
+    <title>Mon Compte</title>
+</head>
+<body>
+    <header>
+        <h1>Mon Compte</h1>
+        <button onclick="deconnexion()">Déconnexion</button>
+    </header>
+
+    <main>
+        <section>
+            <h2>Informations personnelles</h2>
+            <p><strong>Nom :</strong> <span id="afficherNom"></span></p>
+            <p><strong>Prénom :</strong> <span id="afficherPrenom"></span></p>
+            <p><strong>Date de naissance :</strong> <span id="afficherDob"></span></p>
+            <p><strong>Email :</strong> <span id="afficherEmail"></span></p>
+            <button onclick="modifierInformations()">Modifier mes informations</button>
+        </section>
+
+        <section>
+            <h2>Paramètres du compte</h2>
+            <p><strong>Mot de passe :</strong> ********</p>
+            <button>Changer mon mot de passe</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CMS. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        
+        const utilisateur = JSON.parse(localStorage.getItem("utilisateur"));
+
+        if (utilisateur) {
+            document.getElementById("afficherNom").innerText = utilisateur.nom || "Non spécifié";
+            document.getElementById("afficherPrenom").innerText = utilisateur.prenom || "Non spécifié";
+            document.getElementById("afficherDob").innerText = utilisateur.dob || "Non spécifié";
+            document.getElementById("afficherEmail").innerText = utilisateur.email || "Non spécifié";
+        } else {
+        
+            alert("Veuillez vous connecter.");
+            window.location.href = "connexion.html";
+        }
+
+       
+        function deconnexion() {
+            localStorage.removeItem("utilisateur");
+            localStorage.removeItem("nomUtilisateur");
+            alert("Vous avez été déconnecté.");
+            window.location.href = "index.html";
+        }
+
+       
+        function modifierInformations() {
+            alert("Cette fonctionnalité est en cours de développement.");
+        }
+    </script>
+</body>
+</html>
